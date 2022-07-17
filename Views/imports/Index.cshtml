@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Logister.Models.import>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null,new {@class="btn btn-primary"})
+</p>
+
+<br />
+
+<table class="table table-bordered">
+    <tr class="btn-primary">
+        <th>
+            Country  @* @Html.DisplayNameFor(model => model.Country) *@
+        </th>
+        <th>
+            Sender
+            @* @Html.DisplayNameFor(model => model.Sender) *@
+        </th>
+        <th>
+            Brand
+            @*  @Html.DisplayNameFor(model => model.Brand) *@
+        </th>
+        <th>
+            Type
+            @*  @Html.DisplayNameFor(model => model.Type) *@
+        </th>
+        <th>
+            Transport Via
+            @*   @Html.DisplayNameFor(model => model.Transport_Via) *@
+        </th>
+        <th>
+            Quantity
+            @*  @Html.DisplayNameFor(model => model.Quantity) *@
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transport_Via)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })   |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })   |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id}, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

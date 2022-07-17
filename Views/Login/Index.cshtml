@@ -1,0 +1,82 @@
+﻿@model Logister.Models.user
+
+@{ 
+    ViewBag.Title = "Index";
+ }
+<style>
+    #userblock{
+        padding-top:26px;
+        margin: 3px;
+    }
+    #userlabel{
+        align-content:center;
+        align-items:center;
+        justify-content:center;
+    }
+    #passblock {
+        padding-top: 22px;
+        margin: 3px;
+    }
+    #passlabel {
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<h2>Login Page</h2>
+
+@using (Html.BeginForm("login-form"))
+{
+@Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>User Info</h4>
+                    <hr />
+
+                    <table class="table-responsive">
+                        <tr>
+                            <td>
+                                @*  @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label" }) *@
+                                <div class="control-label" id="userlabel"><h3>Username</h3></div>
+
+                            </td>
+                            <td>
+                                <div class="col-md-10" id="userblock">
+                                    @Html.EditorFor(model => model.Username, new { AllowHtmlAttribute = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                </div>
+                            </td>
+                        </tr>
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        
+                        <tr>
+                            <td>
+                                @*@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" }) *@
+                                <div class="control-label" id="passlabel"><h3>Password</h3></div>
+                            </td>
+                            <td>
+                                <div class="col-md-10" id="passblock">
+                                    @Html.EditorFor(model => model.Password, new { AllowHtmlAttribute = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Login" class="btn btn-success" />
+                        </div>
+                    </div>
+                </div>}
+
+<div>
+    @Html.ActionLink("Create New User", "Index","users",null,new { @class="btn btn-primary"})
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

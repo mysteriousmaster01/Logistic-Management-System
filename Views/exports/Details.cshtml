@@ -1,0 +1,70 @@
+﻿@model Logister.Models.export
+
+
+<h2>Delete Import</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Import Item</h4>
+    <hr />
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.City)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.City)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Pincode)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Pincode)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Brand)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Type)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Transport_Via)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Transport_Via)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Quantity)
+            </td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>
