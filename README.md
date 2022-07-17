@@ -1,3 +1,3 @@
 # Logistic-Management-System
 
-there is no packages added folder in above repository
+there is no added packages folder in above repository
