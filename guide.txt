@@ -1,0 +1,19 @@
+HOW TO RUN PROJECt INto YOUR SYSTEM
+
+
+# Logistic-Management-System
+
+for this  project download all files into your  system then create a new folder named Webapplication1 and copy / move all file except webapplication1.sln to that folder.
+Then go to visual studio and open the folder that you created or open the webapplication1.sln file.
+
+then go to ssms server and start server for the database connection  ( Without the project will not working )
+
+and connect with server and create three databases of import data, export data and user data into ypur database and connect with the webapplication
+
+then you are ready to go
+
+connection tips:
+connect via ado.net framework
+and itside that  connect with entity framework model so the boiler plate of code is  ready.
+
+all  the best !!!.
